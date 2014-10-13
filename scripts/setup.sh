@@ -26,6 +26,6 @@ docker run -d --name redis-registry -v "$REDIS_PATH":/data redis
 
 echo -e "\e[0;36mStarting the web interface...\e[0m"
 docker run -d --name web-registry -e BASE_URL="$WEB_BASE_URL" -e REDIS_URL="$WEB_REDIS_URL" -e IMAGES_PATH="$WEB_IMAGES_PATH" \
-              --link redis-registry:redis -p 80:80 -v "$REGISTRY_PATH"/repositories/library:"$WEB_IMAGES_PATH":ro geodan/registry-web
+              --link redis-registry:redis -p 80:80 -v "$REGISTRY_PATH"/repositories/library:"$WEB_IMAGES_PATH":ro geodan/registry-ui
 
 echo -e "\e[1;37mAll done! Have fun with your complete registry setup!\e[0m"
